@@ -1,6 +1,8 @@
 $color-text: #fff;
 $color-main: #fed136;
 $color-sub: #777;
+
+$transition: all 1s;
 // Global
 
 * {
@@ -70,6 +72,11 @@ section {
 
 .logo a {
     color: $color-main;
+    transition: $transition;
+}
+
+.logo a:hover {
+    color: $color-text;
 }
 
 .nav {
@@ -78,9 +85,14 @@ section {
     padding-top: 40px;
 }
 
+.burger {
+    display: none;
+}
+
 .nav ul {
     display: flex;
     list-style: none;
+    padding-top: 20px;
 }
 
 .nav ul li {
@@ -90,11 +102,18 @@ section {
 
 .nav ul li a {
     color: $color-text;
+    transition: $transition;
+}
+
+.nav ul li a:hover {
+    color: $color-main;
 }
 
 .header-inner {
     text-align: center;
-    margin-top: 20%;
+    padding-top: 10%;
+    margin: auto;
+    max-width: 70%;
     color: $color-text;
 }
 
@@ -111,6 +130,13 @@ section {
 
 .header-inner button {
     margin-top: 60px;
+    cursor: pointer;
+    transition: $transition;
+}
+
+.header-inner button:hover {
+    background-color: #222222;
+    color: $color-main;
 }
 
 // services
@@ -164,6 +190,12 @@ section {
 
 .portfolio-item {
     margin-bottom: 50px;
+    cursor: pointer;
+    transition: $transition;
+}
+
+.portfolio-item:hover {
+    opacity: 0.4;
 }
 
 .portfolio-item-img {
@@ -196,21 +228,21 @@ section {
 // footer
 
 footer {
-    display: flex;
     margin: 40px 0;
-    align-items: center;
 }
 
 footer p {
-    flex: 1;   
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
-
 footer ul {
-    flex: 2;
     list-style: none;
     display: flex;
-    
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 footer ul li {
     margin-left: 10px;
@@ -219,6 +251,11 @@ footer ul li {
     height: 40px;
     border-radius: 50px;
     background-color: #222222;
+    transition: $transition;
+}
+
+footer ul li:hover {
+    background-color: $color-main;
 }
 
 footer ul li a{
@@ -233,4 +270,75 @@ footer ul li a i{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+@media(max-width: 580px) {
+
+
+    .nav {
+        display: flex;
+        justify-content:space-between;
+        padding-top: 20px;
+    }
+
+    .nav ul {
+        display: none;
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+
+    .burger {
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $color-main;
+        color: $color-text;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .nav ul li {
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
+    .header-inner h3 {
+        font-size: 20px;
+        font-style: italic;
+    }
+    
+    .header-inner h1 {
+        font-size: 50px;
+        padding-top: 20px;
+        text-transform: uppercase;
+    }
+
+    button {
+        width: 150px;
+        height: 65px;
+        border-radius: 3px;
+        border: none;
+        background-color: $color-main;
+        color: $color-text;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    footer  {
+        margin: 40px 0;
+    }
+
+    footer ul {
+        margin: auto;
+        width: 100%;
+    }
+
+    footer ul li {
+        margin-left: 10px;
+        width: 100%;
+        min-width: 40px;
+        min-height: 40px;
+        height: 100%;
+    }
 }
